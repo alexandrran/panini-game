@@ -20,6 +20,7 @@ play_button = pygame.image.load("assets\\buttons\\play_button.png")
 quit_button = pygame.image.load("assets\\buttons\\quit_button.png")
 bg = pygame.image.load("assets\\menu.png")
 wp = pygame.image.load("assets\\wp.png")
+cm = pygame.image.load("assets\\cm.png")
 # end = pygame.image.load("assets\\thanks.png")
 play_rect = play_button.get_rect()
 # sound_rect = sound_button.get_rect()
@@ -51,16 +52,28 @@ screen.blit(play_button, play_rect)
 screen.blit(quit_button, quit_rect)
 pygame.display.flip()
 
+current_screen = 'main'
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.MOUSEBUTTONDOWN and quit_rect.collidepoint(event.pos)):
             pygame.quit()
             sys.exit()
-        if event.type == pygame.MOUSEBUTTONDOWN and play_rect.collidepoint(event.pos):
-            # pygame.mixer.music.fadeout(500)
-            screen.blit(wp, (0,0))
-            pygame.display.flip()
-            time.sleep(0.5)
+
+        
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if current_screen == 'main' and play_rect.collidepoint(event.pos):
+                screen.blit(wp, (0, 0))
+                pygame.display.flip()
+                current_screen = 'wp'
+                continue  
+
+            if current_screen == 'wp':
+                x, y = pygame.mouse.get_pos()
+                if 21 < x < 230 and 230 < y < 450:
+                    screen.blit(cm, (0, 0))
+                    pygame.display.flip()
+                    current_screen = 'cm'
 
     screen.fill((0, 0, 0))
     # screen.blit(beginning[current_frame], (0, 0))
