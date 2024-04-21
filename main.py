@@ -27,7 +27,7 @@ hearts = 3
 play_button = pygame.image.load("assets/buttons/play_button.png")
 quit_button = pygame.image.load("assets/buttons/quit_button.png")
 bg = pygame.image.load("assets/menu.png")
-wp = pygame.image.load("assets/workplace.png")
+wp = pygame.image.load("assets/wp.png")
 
 c1_images = [pygame.image.load(f"assets/customers/c1.{i}.png") for i in range(1,5)]
 c2_images = [pygame.image.load(f"assets/customers/c2.{i}.png") for i in range(1,5)]
