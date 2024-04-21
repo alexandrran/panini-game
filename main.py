@@ -142,7 +142,7 @@ while True:
                 # customers.clear()
                 # orders.clear()
                 current_minute = working_day_start
-                current_screen = 'workplace'
+                current_screen = 'wp'
                 screen.blit(cm, cm_rect)
                 screen.blit(grill_opened, grill_opened_rect)
                 money_surface = money_font.render(f"Money: ${money}", True, (0, 0, 0))
