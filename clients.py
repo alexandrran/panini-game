@@ -13,7 +13,7 @@ FPS = 60
 
 FONT = pygame.font.Font(None, 36)
 
-bg = pygame.image.load("assets/wp3.png")
+bg = pygame.image.load("assets/wp.png")
 
 client_images = {
     'c1': [pygame.image.load(f"assets/customers/c1.{i}.png") for i in range(1, 5)],
